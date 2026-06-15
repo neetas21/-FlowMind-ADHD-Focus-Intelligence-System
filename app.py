@@ -113,13 +113,15 @@ with st.sidebar:
     st.divider()
 
     import os
-groq_key = st.text_input(
-    "🔑 Groq API Key (optional — pre-loaded for demo)",
-    type="password",
-    placeholder="gsk_...",
-    value=os.environ.get("GROQ_API_KEY", ""),
-    help="Get a free key at console.groq.com"
-)
+
+    groq_key = st.text_input(
+        "🔑 Groq API Key (optional - pre-loaded for demo)",
+        type="password",
+        placeholder="gsk_...",
+        value=os.environ.get("GROQ_API_KEY", ""),
+        help="Get a free key at console.groq.com"
+    )
+
     ai_enabled = bool(groq_key and groq_key.startswith("gsk_"))
     st.caption(f"AI Nudges: {'✅ Active' if ai_enabled else '⚠️ Enter key to enable'}")
 
